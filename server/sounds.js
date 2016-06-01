@@ -1,10 +1,10 @@
 var fs = require('fs');
 
-// synchronous code is okay here, this only runs once on server startup
+// synchronous code is okay/preferred here, this only runs once on server startup
 
 module.exports = {}
 
-var folders = fs.readdirSync(__dirname + '/sounds');
+var folders = fs.readdirSync(__dirname + '/../public/sounds');
 
 var readFolder = function (folder, name) {
   module.exports[name] = [];
@@ -18,7 +18,7 @@ var readFolder = function (folder, name) {
 };
 
 for (var i = 0; i < folders.length; i++) {
-  if (fs.statSync(__dirname + '/sounds/' + folders[i]).isDirectory()) {
-    readFolder(__dirname + '/sounds/' + folders[i], folders[i]);
+  if (fs.statSync(__dirname + '/../public/sounds/' + folders[i]).isDirectory()) {
+    readFolder(__dirname + '/../public/sounds/' + folders[i], folders[i]);
   }
 }
