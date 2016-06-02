@@ -5,10 +5,8 @@ var chaos = angular.module('chaos', ['ui.router'])
 
   $stateProvider.state('/', {
     url: '/',
-    templateUrl: 'templates/module.html',
-    controller: ['$scope', function ($scope) {
-      (new Audio('sounds/cartoon/boing.mp3')).play()
-    }]
+    templateUrl: 'templates/home.html',
+    controller: 'mixerController'
   });
 }])
 

@@ -7,7 +7,8 @@ module.exports = function(grunt) {
       dist: {
         src: [
           'src/chaos.js',
-          'src/moduleController.js'
+          'src/controllers/mixerController.js',
+          'src/directives/mixer.js'
         ],
         dest: 'public/src/build.js'
       }
