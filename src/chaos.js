@@ -18,5 +18,5 @@ var chaos = angular.module('chaos', ['ui.router'])
 }])
 
 .run(['$rootScope', '$http', function ($rootScope, $http) {
-
+  $rootScope.masterVolume = 0;
 }]);

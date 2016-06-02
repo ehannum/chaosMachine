@@ -1,4 +1,4 @@
-chaos.controller('mixerController', ['$scope', '$http', function ($scope, $http) {
+chaos.controller('mixerController', ['$scope', '$rootScope', '$http', function ($scope, $rootScope, $http) {
   $scope.folders = {};
 
   $http.get('/sounds')
