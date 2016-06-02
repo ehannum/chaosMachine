@@ -6,7 +6,8 @@ module.exports = function(grunt) {
     concat: {
       dist: {
         src: [
-          'src/chaosMachine.js'
+          'src/chaos.js',
+          'src/moduleController.js'
         ],
         dest: 'public/src/build.js'
       }
