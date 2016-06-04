@@ -11,7 +11,7 @@ var readFolder = function (folder, name) {
 
   var files = fs.readdirSync(folder);
   for (var j = 0; j < files.length; j++) {
-    if (fs.statSync(folder + '/' + files[j]).isFile()) {
+    if (fs.statSync(folder + '/' + files[j]).isFile() && files[j][0] !== '.') {
       module.exports[name].push(files[j]);
     }
   }

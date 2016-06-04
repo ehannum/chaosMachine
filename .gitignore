@@ -5,3 +5,4 @@ public/res/*.css
 public/res/*.map
 .env
 public/sounds/*
+!public/sounds/shutup

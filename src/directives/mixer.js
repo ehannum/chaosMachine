@@ -7,22 +7,11 @@ chaos.directive('mixer', [function () {
       name: '=',
       sounds: '='
     },
-    controller: ['$scope', '$rootScope', '$timeout', function ($scope, $rootScope, $timeout) {
+    controller: ['$scope', '$timeout', 'randomSound', function ($scope, $timeout, randomSound) {
       $scope.volume = 1;
-      $scope.delay = 50;
+      $scope.delay = 5;
 
-      var playSound = function () {
-        var randomSoundFile = $scope.sounds[Math.floor(Math.random()*$scope.sounds.length)];
-        var audioUrl = 'sounds/' + $scope.name + '/' + randomSoundFile
-        var sound = new Audio(audioUrl);
-        sound.volume = $scope.volume * $rootScope.masterVolume;
-        sound.play();
-
-        var randomDelay = Math.random() * $scope.delay * 100 + Math.random() * 1000 + 500;
-        $timeout(playSound, randomDelay);
-      }
-
-      playSound();
+      $timeout(function(){ randomSound($scope) }, Math.random()*5000);
     }]
   }
 }]);
