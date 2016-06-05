@@ -1,5 +1,6 @@
 <h1>Home</h1>
 Master volume: <input type="range" min="0" max="1" step="0.01" ng-model="$root.masterVolume" />
+<button ng-click="playShutup()">SHUT UP!</button>
 <div ng-repeat="(name,sounds) in folders">
   <mixer name="name" sounds="sounds"></mixer>
 </div>

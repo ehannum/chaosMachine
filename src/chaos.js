@@ -18,5 +18,7 @@ var chaos = angular.module('chaos', ['ui.router'])
 }])
 
 .run(['$rootScope', '$http', function ($rootScope, $http) {
+  $rootScope.allSounds = [];
+  $rootScope.muted = false;
   $rootScope.masterVolume = 0;
 }]);
