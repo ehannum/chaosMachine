@@ -23,11 +23,10 @@ chaos.factory('playSound', ['$rootScope', '$timeout', function ($rootScope, $tim
         });
       }
 
-      var randomDelay = Math.random() * (11 - scope.delay) * 1000 + (10 - scope.delay) * 500;
+      var randomDelay = Math.random() * (11 - scope.delay) * 1000 + (11 - scope.delay) * 1000;
       $timeout(function(){ playSound(scope) }, randomDelay);
     },
     shutup: function (sounds) {
-      console.log(sounds);
       var randomSoundFile = sounds[Math.floor(Math.random()*sounds.length)];
       var audioUrl = 'sounds/shutup/' + randomSoundFile
       var sound = new Audio(audioUrl);

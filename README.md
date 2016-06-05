@@ -8,4 +8,4 @@ Instructions:
 3. node server/server.js
 4. navigate to localhost:3030
 
-Sounds are pulled from a folder in public/ called sounds/. Git doesn't allow empty folders so you'll just have to add one. After that, add folders to sounds/ with the names of all of your categories of sounds. Sound files should go in those subfolders. Sounds put directly in the sounds/ folder will be ignored. Any and all audio formats are supported (as far as I know).
+Sounds are pulled from a folder in public/ called sounds/. Add folders to sounds/ with the names of all of your categories of sounds. Sound files should go in those subfolders. Sounds put directly in the sounds/ folder will be ignored. Any and all audio formats are supported (as far as I know).
