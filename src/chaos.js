@@ -21,4 +21,5 @@ var chaos = angular.module('chaos', ['ui.router'])
   $rootScope.allSounds = [];
   $rootScope.muted = false;
   $rootScope.masterVolume = 0;
+  $rootScope.music = null;
 }]);

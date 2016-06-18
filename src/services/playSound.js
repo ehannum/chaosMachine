@@ -26,6 +26,27 @@ chaos.factory('playSound', ['$rootScope', '$timeout', function ($rootScope, $tim
       var randomDelay = Math.random() * (11 - scope.delay) * 1000 + (11 - scope.delay) * 1000;
       $timeout(function(){ playSound(scope) }, randomDelay);
     },
+    music: function playMusic(scope) {
+      if (scope.delay != 0 && !$rootScope.muted && !$rootScope.music) {
+        var randomSoundFile = scope.sounds[Math.floor(Math.random()*scope.sounds.length)];
+        var audioUrl = 'sounds/' + scope.name + '/' + randomSoundFile
+        var sound = new Audio(audioUrl);
+        sound.volume = scope.volume * $rootScope.masterVolume;
+        sound.play();
+
+        // sounds are automatically garbage collected as soon as they are finished as long as there are no references
+        // since we're keeping a refernece to them we need to remove it when they finish.
+        $rootScope.music = sound;
+
+        // pause event also triggers on end as long as looping is not on (it isn't).
+        sound.addEventListener('pause', function () {
+          $rootScope.music = null;
+        });
+      }
+
+      var randomDelay = Math.random() * (11 - scope.delay) * 1000 + (11 - scope.delay) * 1000;
+      $timeout(function(){ playMusic(scope) }, randomDelay);
+    },
     shutup: function (sounds) {
       var randomSoundFile = sounds[Math.floor(Math.random()*sounds.length)];
       var audioUrl = 'sounds/shutup/' + randomSoundFile
@@ -35,6 +56,7 @@ chaos.factory('playSound', ['$rootScope', '$timeout', function ($rootScope, $tim
       this.stopAll();
     },
     stopAll: function () {
+      if ($rootScope.music) $rootScope.music.pause();
       for (var i = 0; i < $rootScope.allSounds.length; i++) {
         $rootScope.allSounds[i].pause();
       }

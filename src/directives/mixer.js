@@ -11,7 +11,11 @@ chaos.directive('mixer', [function () {
       $scope.volume = 1;
       $scope.delay = 5;
 
-      $timeout(function(){ playSound.random($scope) }, Math.random()*5000);
+      if ($scope.name.toLowerCase() === 'music') {
+        playSound.music($scope);
+      } else {
+        playSound.random($scope);
+      }
     }]
   }
 }]);
