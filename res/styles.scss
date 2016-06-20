@@ -13,6 +13,25 @@ html, body {
   box-sizing: border-box;
 }
 
+header {
+  margin: 5px;
+  padding-top: 100px;
+  padding-left: 80px;
+  width: 800px;
+  height: 158px;
+  background-size: cover;
+  background-image: url("../img/header.png");
+
+  button {
+    margin-left: 26px;
+  }
+
+  input[type="range"] {
+    background-color: #111;
+    border-color: #28201B;
+  }
+}
+
 .mixer {
   margin: 5px;
   padding: 64px;
@@ -71,4 +90,5 @@ input[type="range"]::-webkit-slider-thumb {
   height: 24px;
   background-image: url("../img/slider1.png");
   background-size: cover;
+  box-shadow: -3px 3px 6px rgba(0, 0, 0, 0.4);
 }
