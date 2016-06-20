@@ -40,10 +40,30 @@ html, body {
     .icon {
       max-width: 20px;
       max-height: 20px;
+      margin-bottom: -6px;
     }
 
     input {
       margin-right: 15px;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    input[type="range"] {
+      -webkit-appearance: none;
+      background-color: #222;
+      height:4px;
+      border-radius: 2px;
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 30px;
+      height: 24px;
+      background-image: url("../img/slider1.png");
+      background-size: cover;
     }
   }
 }
