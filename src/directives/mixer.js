@@ -5,11 +5,13 @@ chaos.directive('mixer', [function () {
     templateUrl: 'templates/directives/mixer.html',
     scope: {
       name: '=',
-      sounds: '='
+      sounds: '=',
+      index: '='
     },
     controller: ['$scope', '$timeout', 'playSound', function ($scope, $timeout, playSound) {
       $scope.volume = 1;
       $scope.delay = 5;
+      $scope.skins = ['woffCanceler', 'autoSleeper'];
 
       if ($scope.name.toLowerCase() === 'music') {
         playSound.music($scope);

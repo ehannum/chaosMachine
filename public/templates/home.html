@@ -3,5 +3,5 @@
   <button ng-click="playShutup()">SHUT UP!</button>
 </header>
 <div ng-repeat="(name,sounds) in folders">
-  <mixer name="name" sounds="sounds"></mixer>
+  <mixer name="name" sounds="sounds" index="$index"></mixer>
 </div>
