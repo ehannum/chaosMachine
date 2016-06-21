@@ -58,6 +58,23 @@ header {
     }
   }
 
+  &.sequenceCompiler {
+    padding: 64px 124px;
+    height: 224px;
+    margin-bottom: -18px;
+    background-image: url("../img/DORF2254.png");
+
+    input[type="range"] {
+      background-color: #111;
+      border-color: #24313D;
+    }
+
+    img {
+      -webkit-filter: invert(0.8);
+      filter: invert(0.8);
+    }
+  }
+
   h2 {
     margin: 0;
     padding: 0 10px;
