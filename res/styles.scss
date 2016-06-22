@@ -7,6 +7,7 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: Helvetica, Arial, sans-serif;
+  background-color: #111;
 }
 
 * { // Just makes everything so much easier
@@ -72,6 +73,16 @@ header {
     img {
       -webkit-filter: invert(0.8);
       filter: invert(0.8);
+    }
+  }
+
+  &.germanWord {
+    padding: 64px;
+    height: 222px;
+    background-image: url("../img/CBMK2.png");
+
+    input[type="range"] {
+      border-color: #DAD9D7;
     }
   }
 
